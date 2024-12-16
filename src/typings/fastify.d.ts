@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 import { FastifyBaseLogger, FastifyInstance, FastifyTypeProviderDefault, RawServerDefault } from 'fastify'
 import { IncomingMessage, ServerResponse } from 'http'
-import Redis from 'ioredis'
 import { Readable } from 'stream'
 import {
   BadRequest,
