@@ -47,7 +47,6 @@ interface MulterFile {
 declare module 'fastify' {
   interface FastifyInstance {
     prisma: PrismaClient
-    redis: Redis
     httpErrors: {
       BadRequest: typeof BadRequest
       Unauthorized: typeof Unauthorized
