@@ -1,0 +1,50 @@
+{
+  "name": "voicetube-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "start": "node dist/src/app.js",
+    "build": "tsc",
+    "dev": "nodemon src/app.ts",
+    "prisma:generate": "npx prisma generate",
+    "prisma:migrate": "npx prisma migrate dev --name init",
+    "prisma:deploy": "npx prisma migrate deploy",
+    "prisma:create": "npx prisma migrate dev --name init --create-only",
+    "prisma:studio": "npx prisma studio"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/autoload": "^6.0.2",
+    "@fastify/cors": "^10.0.1",
+    "@fastify/static": "^8.0.3",
+    "@prisma/client": "^6.0.1",
+    "@sinclair/typebox": "^0.34.9",
+    "axios": "^1.7.8",
+    "bcrypt": "^5.1.1",
+    "colorette": "^2.0.20",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.1.0",
+    "fastify-multer": "^2.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "nodemon": "^3.1.7",
+    "uuid": "^11.0.3",
+    "winston": "^3.17.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/crypto-js": "^4.2.2",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/lodash": "^4.17.13",
+    "@types/node": "^22.10.1",
+    "@types/uuid": "^10.0.0",
+    "prettier": "^3.4.1",
+    "prisma": "^6.0.1",
+    "typescript": "^5.7.2"
+  }
+}
