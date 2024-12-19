@@ -6,6 +6,7 @@ export const ParamSchema = Type.Object({
 })
 
 export const BodySchema = Type.Object({
+  name: Type.Optional(Type.String()),
   password: Type.Optional(Type.String()),
   content: Type.String(),
 })
@@ -23,18 +24,19 @@ export default async (fastify: FastifyInstance) => {
     },
     handler: async (request, reply) => {
       const { slug } = request.params
-      const { password, content } = request.body
+      const { password, content, name } = request.body
       await fastify.prisma.note.upsert({
         where: {
           slug
         },
         update: {
+          name: name || slug,
           content,
           password,
         },
         create: {
           slug,
-          name: slug,
+          name: name || slug,
           content,
           password,
         },
